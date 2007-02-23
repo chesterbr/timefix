@@ -1,0 +1,32 @@
+<project name="timefix" default="build_all" basedir=".">
+
+	<property name="SOURCE" value="src" />
+	<property name="BUILD" value="temp" />
+	<property name="DEPLOY" value="deploy" />
+	<property name="JAVADOC" value="docs" />
+
+	<path id="classpath">
+		<pathelement path="${java.class.path}" />
+	</path>
+
+	<target name="build_all" description="Compiles, builds the .jar and generates Javadoc">
+
+		<delete dir="${BUILD}" />
+		<mkdir dir="${BUILD}" />
+		<javac srcdir="${SOURCE}" destdir="${BUILD}/" target="1.3" source="1.3" debug="on" debuglevel="lines,vars,source">
+			<classpath refid="classpath" />
+		</javac>
+
+		<delete dir="${DEPLOY}" />
+		<mkdir dir="${DEPLOY}" />
+		<jar jarfile="timefix.jar" basedir="${BUILD}" destfile="${DEPLOY}/timefix.jar" />
+
+		<javadoc destdir="${JAVADOC}">
+			<fileset dir="${SOURCE}" />
+			<classpath refid="classpath" />
+		</javadoc>
+		<delete dir="${BUILD}" />
+
+	</target>
+
+</project>
