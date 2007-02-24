@@ -30,9 +30,10 @@ import bmsi.util.ZoneInfo;
  * Allows Java environments to adjust their default TimeZone settings to
  * accomodate changes such as Daylight Savivings Time updates.
  * <p>
- * This ajust can be made on the aplication itself (by calling the ??? method),
- * or by inserting the class on the application startup script (it will adjust
- * the timezone and call the "real" startup class).
+ * This ajust can be made on the aplication itself (by calling the
+ * <code>fixTimeZone()</code> method), or by inserting the class on the
+ * application startup script (it will adjust the timezone and call the "real"
+ * startup class).
  * <p>
  * The latter method is very useful for deployers that don't have access to the
  * application source code.
