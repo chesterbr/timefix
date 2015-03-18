@@ -1,3 +1,5 @@
+**WARNING** This is an old project. For new projects, one should look at better solutions, such as [Joda-Time](http://www.joda.org/joda-time/), but I'll keep this here for those that need it.
+
 ## Introduction ##
 
 This library allows a developer or a sysadmin to force Java applications (including those hosted on Java servers such as Tomcat) to use the host operating system's timezone info (stored at `/etc/localtime`, using the [http://www.twinsun.com/tz/tz-link.htm tz database format]).
